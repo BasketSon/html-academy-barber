@@ -8,17 +8,17 @@
       <header class="page-header">
         <nav class="page-navi">
           <a class="page-header-logo">
-            <img src="1" alt="Логотип барбершопа">
+            <img src="img/index-logo.svg" alt="Логотип барбершопа">
           </a>
           <ul class="site-navi">
             <li><a href="info.html">Информация</a></li>
             <li><a href="news.html">Новости</a></li>
-            <li><a href="price.html">Прайс->лист</a></li>
+            <li><a href="price.html">Прайс-лист</a></li>
             <li><a href="shop.html">Магазин</a></li>
             <li><a href="contacts.html">Контакты</a></li>
           </ul>
           <ul class="user-navi">
-            <li><a class="login-link">href="#">Вход</a></li>
+            <li><a class="login-link" href="#">Вход</a></li>
           </ul>
         </nav>
       </header>
@@ -87,10 +87,10 @@
           <h2>Записаться</h2>
           <b>УКАЖИТЕ ЖЕЛАЕМУЮ ДАТУ И ВРЕМЯ И МЫ СВЯЖЕМСЯ С ВАМИ ДЛЯ ПОДТВЕРЖДЕНИЯ БРОНИ</b>
           <form class="signup-form" action="index.html" method="post">
-            <input type="date" name="date" value="08.10.2017"><label for="date">Дата</label>
-            <input type="time" name="time" value="10:00"><label for="time">Время</label>
-            <input type="text" name="name" value="Борода"><label for="name">Ваше имя</label>
-            <input type="tel" name="phone" value="+7 123 456-78-90"><label for="phone">Телефон</label>
+            <input type="text" name="date" id="date" value="08.10.2017"><label for="date">Дата</label>
+            <input type="time" name="time" id="time" value="10:00"><label for="time">Время</label>
+            <input type="text" name="name" id="name" value="Борода"><label for="name">Ваше имя</label>
+            <input type="tel" name="phone" id="phone" value="+7 123 456-78-90"><label for="phone">Телефон</label>
             <button type="submit" name="send">Отправить</button>
           </form>
         </section>
@@ -119,9 +119,9 @@
         <h2>Личный кабинет</h2>
         <p>Введите свой логин и пароль.</p>
         <form class="modal-login-form" action="index.html" method="post">
-          <input type="text" name="login" value="логин">
+          <input type="text" name="login" id="login" value="логин">
           <input type="text" name="password" value="пароль">
-          <input type="checkbox" name="remember"><label for="remember">Запомните меня</label>
+          <input type="checkbox" id="remember" name="remember"><label for="remember">Запомните меня</label>
           <a href="#" class="password-restore-link">Я забыл пароль</a>
           <button type="submit" name="button">Войти</button>
         </form>
