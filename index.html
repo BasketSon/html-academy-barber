@@ -3,25 +3,27 @@
     <head>
       <meta charset="utf-8">
       <title>Barbershop borodinski</title>
+      <link rel="stylesheet" href="css/normalize.css">
       <link rel="stylesheet" href="css/master.css">
+      <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
     </head>
     <body>
       <header class="page-header">
         <div class="wraper wraper-header">
 
-          <nav class="page-navi main-page-navi">
-            <a class="page-header-logo">
+          <nav class="page-navi main-page-navi clearfix">
+            <div class="page-header-logo">
               <img src="img/index-logo.svg" width="371" height="155" alt="Логотип барбершопа">
-            </a>
-            <ul class="user-navi">
-              <li><a class="login-link" href="#">Вход</a></li>
-            </ul>
+            </div>
             <ul class="site-navi">
               <li><a href="info.html">Информация</a></li>
               <li><a href="news.html">Новости</a></li>
               <li><a href="price.html">Прайс-лист</a></li>
               <li><a href="shop.html">Магазин</a></li>
               <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+            <ul class="user-navi">
+              <li><a class="login-link" href="login.html">Вход</a></li>
             </ul>
           </nav>
         </div>
@@ -41,7 +43,7 @@
               </li>
               <li class="feature-item">
                 <h3>КРУТО</h3>
-                <p>ЗАБУДЬТЕ, КАК ВЫ СТРИГЛИСЬ РАНЬШЕ.
+                <p>ЗАБУДЬТЕ, КАК ВЫ СТРИГЛИСЬ РАНЬШЕ.<br>
                 МЫ СДЕЛАЕМ ИЗ ВАС ЗВЕЗДУ ФУТБОЛА ИЛИ КИНО!
                 ВО ВСЯКОМ СЛУЧАЕ ВНЕШНЕ.
                 </p>
@@ -54,52 +56,68 @@
               </li>
             </ul>
           </section>
-          <section class="news noisy-background">
-            <h2>Новости</h2>
-            <ul class="news-list">
-              <li class="news-item">
-                <p>НАМ НАКОНЕЦ ЗАВЕЗЛИ ЯГЕРМАЙСТЕР! ТЕПЕРЬ ВЫ МОЖЕТЕ ПРОПУСТИТЬ СТАКАНЧИК ВО ВРЕМЯ СТРИЖКИ</p>
-                <time datetime="2019-01-11">11 января</time>
-              </li>
-              <li class="news-item">
-                <p>В НАШЕЙ КОМАНДЕ ПОПОЛНЕНИЕ, БОРИС «БРИТВА» СТРИГУНЕЦ, ОБЛАДAТЕЛЬ МНОЖЕСТВА ТИТУЛОВ И НАГРАД ПОПОЛНИЛ НАШИ СТРОЙНЫЕ РЯДЫ</p>
-                <time datetime="2019-01-18">18 января</time>
-              </li>
-            </ul>
-            <a href="news.html" class="button">Все новости</a>
-          </section>
-          <section class="gallery noisy-background">
-            <h2>Фотогаллерея</h2>
-            <figure class="gallery-content">
-              <a href="#"><img src="img/studio.jpg" width="286" height="164" alt="Интерьер"> </a>
-            </figure>
-            <button type="button" name="back" class="button gallery-button gallery-button-back"></button>
-            <button type="button" name="forward" class="button gallery-button gallery-button-forward"></button>
-          </section>
-          <section class="contacts noisy-background">
-            <h2>Контактная информация</h2>
-            <p>БАРБЕРШОП «БОРОДИНСКИЙ»<br>
-              АДРЕС: Г. САНКТ-ПЕТЕРБУРГ, Б. КОНЮШЕННАЯ, Д. 19/8<br>
-              ТЕЛЕФОН: +7 (495) 666-02-66</p>
-            <p>
-              Время работы:<br>
-              ПН—ПТ: С 10:00 ДО 22:00<br>
-              СБ—ВС: С 10:00 ДО 19:00
-            </p>
-            <a href="#" class="button">Как проехать</a>
-            <a href="#" class="button">Обратная связь</a>
-          </section>
-          <section class="signup noisy-background">
-            <h2>Записаться</h2>
-            <b>УКАЖИТЕ ЖЕЛАЕМУЮ ДАТУ И ВРЕМЯ И МЫ СВЯЖЕМСЯ С ВАМИ ДЛЯ ПОДТВЕРЖДЕНИЯ БРОНИ</b>
-            <form class="signup-form" action="index.html" method="post">
-              <input type="text" name="date" id="date" value="08.10.2017"><label for="date">Дата</label>
-              <input type="time" name="time" id="time" value="10:00"><label for="time">Время</label>
-              <input type="text" name="name" id="name" value="Борода"><label for="name">Ваше имя</label>
-              <input type="tel" name="phone" id="phone" value="+7 123 456-78-90"><label for="phone">Телефон</label>
-              <button type="submit" name="send">Отправить</button>
-            </form>
-          </section>
+          <div class="noisy-background section-wraper">
+            <section class="news">
+              <h2>Новости</h2>
+              <ul class="news-list">
+                <li class="news-item">
+                  <p>НАМ НАКОНЕЦ ЗАВЕЗЛИ ЯГЕРМАЙСТЕР! ТЕПЕРЬ ВЫ МОЖЕТЕ ПРОПУСТИТЬ СТАКАНЧИК ВО ВРЕМЯ СТРИЖКИ</p>
+                  <time datetime="2019-01-11">11 января</time>
+                </li>
+                <li class="news-item">
+                  <p>В НАШЕЙ КОМАНДЕ ПОПОЛНЕНИЕ, БОРИС «БРИТВА» СТРИГУНЕЦ, ОБЛАДAТЕЛЬ МНОЖЕСТВА ТИТУЛОВ И НАГРАД ПОПОЛНИЛ НАШИ СТРОЙНЫЕ РЯДЫ</p>
+                  <time datetime="2019-01-18">18 января</time>
+                </li>
+              </ul>
+              <a href="news.html" class="button">Все новости</a>
+            </section>
+            <section class="gallery">
+              <h2>Фотогаллерея</h2>
+              <figure class="gallery-content">
+                <a href="#"><img src="img/studio.jpg" width="286" height="164" alt="Интерьер"> </a>
+              </figure>
+              <button type="button" name="back" class="button gallery-button gallery-button-back">Назад</button>
+              <button type="button" name="forward" class="button gallery-button gallery-button-forward">Вперед</button>
+            </section>
+          </div>
+          <div class="noisy-background section-wraper">
+            <section class="contacts noisy-background">
+              <h2>Контактная информация</h2>
+              <p>БАРБЕРШОП «БОРОДИНСКИЙ»<br>
+                АДРЕС: Г. САНКТ-ПЕТЕРБУРГ, Б. КОНЮШЕННАЯ, Д. 19/8<br>
+                ТЕЛЕФОН: +7 (495) 666-02-66</p>
+              <p>
+                Время работы:<br>
+                ПН—ПТ: С 10:00 ДО 22:00<br>
+                СБ—ВС: С 10:00 ДО 19:00
+              </p>
+              <a href="#" class="button">Как проехать</a>
+              <a href="#" class="button">Обратная связь</a>
+            </section>
+            <section class="appointment noisy-background">
+              <h2>Записаться</h2>
+              <b>УКАЖИТЕ ЖЕЛАЕМУЮ ДАТУ И ВРЕМЯ И МЫ СВЯЖЕМСЯ С ВАМИ ДЛЯ ПОДТВЕРЖДЕНИЯ БРОНИ</b>
+              <form class="appointment-form" action="index.html" method="post">
+                <p class="appointment-date-info">
+                  <label for="appointment-date">Дата</label>
+                  <input type="text" name="date" id="appointment-date" placeholder="08.10.2017">
+                </p>
+                <p class="appointment-time-info">
+                  <label for="appointment-time">Время</label>
+                  <input type="time" name="time" id="appointment-time" placeholder="10:00">
+                </p>
+                <p class="appointment-name-info">
+                  <label for="appointment-name">Ваше имя</label>
+                  <input type="text" name="name" id="appointment-name" placeholder="Борода">
+                </p>
+                <p class="appointment-phone-info">
+                  <label for="appointment-phone">Телефон</label>
+                  <input type="tel" name="phone" id="appointment-phone" placeholder="+7 123 456-78-90">
+                </p>
+                <button type="submit" name="send" class="appointment-button button">Отправить</button>
+              </form>
+            </section>
+          </div>
         </div>
       </main>
       <footer class="page-footer">
@@ -114,9 +132,9 @@
           <div class="footer-social">
             <b>Давайте дружить!</b>
             <ul>
-              <li><a href="#" class="social-button vk-link">Вконтакте</a></li>
-              <li><a href="#" class="social-button fb-link">Фейсбук</a></li>
-              <li><a href="#" class="social-button inst-link">Инстаграм</a></li>
+              <li><a href="#" class="button social-button vk-link" aria-label="Вконтакте">Вконтакте</a></li>
+              <li><a href="#" class="button social-button fb-link" aria-label="Фейсбук">Фейсбук</a></li>
+              <li><a href="#" class="button social-button inst-link" aria-label="Инстаграм">Инстаграм</a></li>
             </ul>
           </div>
           <p class="footer-copyright">
@@ -129,15 +147,29 @@
         <h2>Личный кабинет</h2>
         <p>Введите свой логин и пароль.</p>
         <form class="modal-login-form" action="index.html" method="post">
-          <input type="text" name="login" id="login" value="логин">
-          <input type="text" name="password" value="пароль">
-          <input type="checkbox" id="remember" name="remember"><label for="remember">Запомните меня</label>
-          <a href="#" class="password-restore-link">Я забыл пароль</a>
-          <button type="submit" name="button">Войти</button>
+          <p>
+            <input type="text" name="login" id="modal-login-login" placeholder="Логин">
+            <label for="modal-login-login" class="visually-hidden">Логин</label>
+          </p>
+          <p>
+            <input type="password" name="password" id="modal-login-password" placeholder="Пароль">
+            <label for="modal-login-password" class="visually-hidden">Пароль</label>
+          </p>
+          <p class="modal-login-info">
+            <input type="checkbox" id="modal-login-remember" name="remember">
+            <label for="modal-login-remember">Запомните меня</label>
+            <a href="#" class="password-restore-link">Я забыл пароль</a>
+          </p>
+          <button type="submit" name="modal-login-button" class="button">Войти</button>
         </form>
+        <button type="button" class="modal-login-close" name="mobutton">Закрыть</button>
       </section>
       <section class="modal modal-map">
         <h2 class="visually-hidden">Месторасположение</h2>
+        <p>
+          <img src="img/map-full.jpg" width="766" height="560" alt="Офис компании по адресу: Г. САНКТ-ПЕТЕРБУРГ, УЛ. Б. КОНЮШЕННАЯ, Д. 19/8">
+        </p>
+        <button type="button" class="modal-map-close" name="momapbutton">Закрыть</button>
 
       </section>
 
