@@ -23,7 +23,7 @@
               <li><a href="contacts.html">Контакты</a></li>
             </ul>
             <ul class="user-navi">
-              <li><a class="login-link" href="login.html">Вход</a></li>
+              <li><a class="login-link" onclick="openLogin(event)" href="login.html">Вход</a></li>
             </ul>
           </nav>
         </div>
@@ -88,9 +88,9 @@
           <div class="footer-social">
             <b>Давайте дружить!</b>
             <ul>
-              <li><a href="#" class="social-button vk-link" aria-label="Вконтакте">Вконтакте</a></li>
-              <li><a href="#" class="social-button fb-link" aria-label="Фейсбук">Фейсбук</a></li>
-              <li><a href="#" class="social-button inst-link" aria-label="Инстаграм">Инстаграм</a></li>
+              <li><a href="#" class="button social-button vk-link" aria-label="Вконтакте"></a></li>
+              <li><a href="#" class="button social-button fb-link" aria-label="Фейсбук"></a></li>
+              <li><a href="#" class="button social-button inst-link" aria-label="Инстаграм"></a></li>
             </ul>
           </div>
           <p class="footer-copyright">
@@ -99,26 +99,29 @@
           </p>
         </div>
       </footer>
-      <section class="modal modal-login">
-        <h2>Личный кабинет</h2>
-        <p>Введите свой логин и пароль.</p>
-        <form class="modal-login-form" action="index.html" method="post">
-          <p>
-            <input type="text" name="login" id="modal-login-login" placeholder="Логин">
-            <label for="modal-login-login" class="visually-hidden">Логин</label>
-          </p>
-          <p>
-            <input type="password" name="password" id="modal-login-password" placeholder="Пароль">
-            <label for="modal-login-password" class="visually-hidden">Пароль</label>
-          </p>
-          <p class="modal-login-info">
-            <input type="checkbox" id="modal-login-remember" name="remember">
-            <label for="modal-login-remember">Запомните меня</label>
-            <a href="#" class="password-restore-link">Я забыл пароль</a>
-          </p>
-          <button type="submit" name="button">Войти</button>
-        </form>
-        <button type="button" class="modal-login-close" name="mobutton">Закрыть</button>
+      <section class="modal modal-login visually-hidden">
+        <div class="noisy-background">
+          <h2>Личный кабинет</h2>
+          <p>Введите пожалуйста свой логин и пароль.</p>
+          <form class="modal-login-form" action="index.html" method="post">
+            <p>
+              <input type="text" name="login" id="modal-login-login" placeholder="Логин">
+              <label for="modal-login-login" class="visually-hidden">Логин</label>
+            </p>
+            <p>
+              <input type="password" name="password" id="modal-login-password" placeholder="Пароль">
+              <label for="modal-login-password" class="visually-hidden">Пароль</label>
+            </p>
+            <p class="modal-login-info">
+              <input type="checkbox" id="modal-login-remember" name="remember" class="visually-hidden">
+              <label for="modal-login-remember">Запомните меня</label>
+              <a href="#" class="password-restore-link">Я забыл пароль!</a>
+            </p>
+            <button type="submit" name="modal-login-button" class="button">Войти</button>
+          </form>
+          <button type="button" class="modal-close" name="mobutton" onclick="closeLogin(event)" aria-label="Закрыть форму входа"></button>
+        </div>
       </section>
+      <script type="text/javascript" src="js/modals.js"></script>
     </body>
   </html>

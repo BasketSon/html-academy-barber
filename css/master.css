@@ -26,6 +26,7 @@ body {
 
   background: #000000 url("../img/background.jpg") no-repeat center 40px;
 }
+
 .inner-page {
   color: #000000;
   background-color: #ffffff;
@@ -220,6 +221,8 @@ header.page-header {
 }
 
 .section-wraper {
+  box-sizing: border-box;
+
   margin-bottom: 36px;
   padding-top: 50px;
 }
@@ -232,6 +235,150 @@ header.page-header {
   color: #000000;
   background: #f8f5f2 url("../img/noise-bg.jpg") 0 0;
 }
+section.news,
+section.gallery,
+section.contacts,
+section.appointment {
+  width: 50%;
+  box-sizing: border-box;
+
+  padding-left: 80px;
+}
+section.news,
+section.contacts {
+  position: relative;
+  float: left;
+}
+
+section.gallery,
+section.appointment  {
+  float: right;
+
+  padding-left: 90px;
+}
+
+section.appointment {
+  padding-right: 80px;
+}
+
+section.news h2,
+section.gallery h2,
+section.contacts h2,
+section.appointment h2 {
+  font-size: 30px;
+  line-height: 42px;
+}
+
+section.news ul {
+  list-style: none;
+  padding: 0;
+}
+
+.news-item p,
+.contacts p,
+.appointment b {
+  padding-right: 10px;
+  margin-top: 21.5px;
+  margin-bottom: 0;
+}
+
+.appointment b {
+  display: block;
+}
+
+.appointment-form {
+  display: block;
+
+  margin: 0;
+  padding: 0;
+}
+
+.appointment-form p {
+  display: inline-block;
+
+  margin: 0;
+}
+
+.appointment-form p:nth-of-type(even) {
+  float: right;
+}
+
+.appointment-form label,
+.modal-login-form label {
+  display: block;
+
+  padding: 9px 17px;
+}
+.appointment-form input,
+.modal-login-form input {
+  width: 140px;
+  height: 43px;
+  box-sizing: border-box;
+  padding-left: 15px;
+
+  border: 2px solid #000101;
+  background-color: #f9f6f3;
+
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "PT Sans Narrow", Arial, sans-serif;
+  font-weight: bold;
+}
+.news-item time {
+  text-transform: lowercase;
+}
+
+section.news .button,
+section.contacts .button,
+section.gallery .button {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  width: 140px;
+}
+section.contacts .button {
+  margin-top: 25px;
+}
+section.gallery .button {
+  margin-top: 38px;
+}
+
+.gallery-buttons,
+.contacts-buttons {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+}
+
+.appointment .button,
+.modal-login-form .button {
+  width: 300px;
+
+  margin: 20px 0 50px
+}
+
+section.gallery figure {
+  width: 300px;
+  height: 178px;
+  margin: 0;
+  margin-top: 25px;
+  box-sizing: border-box;
+
+  border: 7px solid #ffffff;
+}
+
+section.news::before,
+section.contacts::before {
+  content: "";
+  position: absolute;
+
+  top: 25px;
+  left: 465px;
+
+  width: 8px;
+  height: 278px;
+
+  background-image: url("../img/split.png")
+}
 .inner-page h1 {
   padding-top: 50px;
   margin: 0;
@@ -243,6 +390,7 @@ header.page-header {
 .inner-page main {
   padding-bottom: 13px;
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.5);
+  opacity: 0.999
 }
 
 .breadcrumbs {
@@ -280,7 +428,7 @@ header.page-header {
   font: inherit;
   display: block;
 
-  padding: 10px 0;
+  padding: 9.5px 0;
 
   text-align: center;
   vertical-align: middle;
@@ -336,7 +484,8 @@ header.page-header {
   margin-bottom: 50px;
 }
 
-.filter label::before {
+.filter label::before,
+.modal-login label::before {
   content: "";
   position: absolute;
   left: 0;
@@ -352,7 +501,8 @@ header.page-header {
 
 }
 
-.filter label::after {
+.filter label::after,
+.modal-login label::after {
   display: none;
 
   content: "";
@@ -366,17 +516,21 @@ header.page-header {
 
   background: url("../img/checkbox-cross.svg") no-repeat 50%;
 }
-.filter label {
+.filter label,
+.modal-login label {
   vertical-align: middle;
 
   cursor: pointer;
 }
 .filter label:hover,
-.filter input:focus + label {
+.filter input:focus + label,
+.modal-login label:hover,
+.modal-login input:focus + label {
   color: #663d15;
 }
 
-.filter input:checked + label::after {
+.filter input:checked + label::after,
+.modal-login input:checked + label::after {
   display: block;
 }
 
@@ -485,12 +639,10 @@ p.catalog-item-price {
   width: 78px;
 }
 .catalog-item-price b {
-  padding: 10px 0;
+  padding: 9.5px 0;
   width: 109px;
-
   text-align: center;
   vertical-align: middle;
-
   background-color: #e5e5e5;
 }
 
@@ -510,10 +662,8 @@ p.catalog-item-price {
 }
 
 .paginator-item-current {
-  padding: 10px 0;
-
+  padding: 9.5px 0;
   text-align: center;
-
   background-color: #ffffff;
 }
 
@@ -719,8 +869,113 @@ section.product-info li {
   margin-bottom: 8px;
 }
 .page-footer {
+  margin-top: 65px;
+  padding-top: 60px;
+  padding-bottom: 37px;
   color: #ffffff;
   background: #232323 url("../img/dark-noise-bg.jpg") 0 0;
+}
+
+.inner-page .page-footer {
+  margin-top: 0;
+}
+
+.wraper-footer {
+  display: flex;
+}
+
+.footer-contacts {
+  margin: 0;
+  padding: 0;
+  width: 310px;
+}
+
+.footer-contacts a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.footer-social {
+  width: 320px;
+
+  text-align: center;
+}
+
+.footer-social ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin: 0;
+  margin-top: 15px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.footer-social li {
+  margin: 0 3px 6px;
+}
+
+.social-button {
+  position: relative;
+  padding: 0;
+  margin: 0;
+
+  height: 43px;
+  width: 43px;
+}
+
+.social-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.vk-link::before {
+  background-image: url("../img/vk.svg");
+}
+
+.fb-link::before {
+  background-image: url("../img/facebook.svg");
+}
+
+.inst-link::before {
+  background-image: url("../img/instagram.svg");
+}
+
+.vk-link:hover::before,
+.vk-link:focus::before {
+  background-image: url("../img/vk-black.svg");
+}
+
+.fb-link:hover::before,
+.fb-link:focus::before {
+  background-image: url("../img/facebook-black.svg");
+}
+
+.inst-link:hover::before,
+.inst-link:focus::before {
+  background-image: url("../img/instagram-black.svg");
+}
+
+.footer-copyright {
+  width: 140px;
+  margin: 0;
+  margin-left: 170px;
+  padding: 0;
+
+  text-align: center;
+}
+
+.footer-copyright a {
+  margin-top: 15px;
 }
 
 .page-footer .button:hover,
@@ -728,4 +983,131 @@ section.product-info li {
   color: #000000;
 
   background-color: #ffffff;
+}
+
+.modal {
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+
+  box-sizing: border-box;
+  box-shadow: 0 30px 50px 0 rgba(0, 1, 1, 0.75);
+
+  transform: translateX(-50%);
+}
+
+.modal-login {
+  top: 123px;
+
+  width: 460px;
+  height: 385px;
+}
+
+.modal-login .noisy-background {
+  position: relative;
+
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 46px 80px 58px;
+}
+.modal-login h2 {
+  margin: 0;
+  margin-bottom: 21.5px;
+
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.modal-login p {
+  margin: 0 0 15px;
+
+  font-size: 14px;
+  line-height: normal;
+}
+
+.modal-login-form p {
+  margin-bottom: 9px;
+}
+
+.modal-login-form :focus:not(:hover) {
+  outline-color: #000000;
+}
+
+.modal-login input {
+  width: 100%;
+
+  text-transform: uppercase;
+}
+
+.modal-login input::placeholder {
+  color: #000000;
+  opacity: 1;
+}
+
+p.modal-login-info {
+  position: relative;
+
+  margin: 0;
+  margin-top: 15px;
+  padding-left: 32px;
+  height: 20px;
+}
+
+.modal-login-info label {
+  display: inline-block;
+  padding: 0;
+
+  max-width: 50%;
+  vertical-align: top;
+}
+
+.modal-login-info label::before {
+  height: 20px;
+  width: 20px;
+}
+
+.password-restore-link {
+  float: right;
+
+  text-decoration: underline;
+}
+
+.modal-login-button {
+  margin-top: 17px;
+}
+.modal-map {
+  top: 576px;
+
+  width: 780px;
+  height: 574px;
+
+  border: 7px solid #ffffff;
+}
+
+.modal-map p {
+  position: relative;
+  margin: 0;
+}
+
+
+.modal-close {
+  position: absolute;
+  top: 2px;
+  right: -39px;
+
+  width: 19px;
+  height: 19px;
+  padding: 0;
+
+  border: none;
+  background: url("../img/cross-map.svg");
+  background-size: contain;
+
+  cursor: pointer;
+}
+
+.modal-login .modal-close {
+  top: 9px;
+  right: -33px;
 }

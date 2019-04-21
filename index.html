@@ -23,7 +23,7 @@
               <li><a href="contacts.html">Контакты</a></li>
             </ul>
             <ul class="user-navi">
-              <li><a class="login-link" href="login.html">Вход</a></li>
+              <li><a class="login-link" onclick="openLogin(event)" href="login.html">Вход</a></li>
             </ul>
           </nav>
         </div>
@@ -56,7 +56,7 @@
               </li>
             </ul>
           </section>
-          <div class="noisy-background section-wraper">
+          <div class="noisy-background section-wraper clearfix">
             <section class="news">
               <h2>Новости</h2>
               <ul class="news-list">
@@ -76,12 +76,14 @@
               <figure class="gallery-content">
                 <a href="#"><img src="img/studio.jpg" width="286" height="164" alt="Интерьер"> </a>
               </figure>
-              <button type="button" name="back" class="button gallery-button gallery-button-back">Назад</button>
-              <button type="button" name="forward" class="button gallery-button gallery-button-forward">Вперед</button>
+              <div class="gallery-buttons">
+                <button type="button" name="back" class="button gallery-button gallery-button-back">Назад</button>
+                <button type="button" name="forward" class="button gallery-button gallery-button-forward">Вперед</button>
+              </div>
             </section>
           </div>
-          <div class="noisy-background section-wraper">
-            <section class="contacts noisy-background">
+          <div class="noisy-background section-wraper clearfix">
+            <section class="contacts">
               <h2>Контактная информация</h2>
               <p>БАРБЕРШОП «БОРОДИНСКИЙ»<br>
                 АДРЕС: Г. САНКТ-ПЕТЕРБУРГ, Б. КОНЮШЕННАЯ, Д. 19/8<br>
@@ -91,20 +93,22 @@
                 ПН—ПТ: С 10:00 ДО 22:00<br>
                 СБ—ВС: С 10:00 ДО 19:00
               </p>
-              <a href="#" class="button">Как проехать</a>
-              <a href="#" class="button">Обратная связь</a>
+              <div class="contacts-buttons">
+                <a href="map.html" class="button" id="map-button" onclick="openMap(event)">Как проехать</a>
+                <a href="#" class="button">Обратная связь</a>
+              </div>
             </section>
             <section class="appointment noisy-background">
               <h2>Записаться</h2>
               <b>УКАЖИТЕ ЖЕЛАЕМУЮ ДАТУ И ВРЕМЯ И МЫ СВЯЖЕМСЯ С ВАМИ ДЛЯ ПОДТВЕРЖДЕНИЯ БРОНИ</b>
-              <form class="appointment-form" action="index.html" method="post">
+              <form class="appointment-form" action="mailto:ehal.bydlo@gmail.com" enctype="text/plain" method="post">
                 <p class="appointment-date-info">
                   <label for="appointment-date">Дата</label>
                   <input type="text" name="date" id="appointment-date" placeholder="08.10.2017">
                 </p>
                 <p class="appointment-time-info">
                   <label for="appointment-time">Время</label>
-                  <input type="time" name="time" id="appointment-time" placeholder="10:00">
+                  <input type="text" name="time" id="appointment-time" placeholder="10:00">
                 </p>
                 <p class="appointment-name-info">
                   <label for="appointment-name">Ваше имя</label>
@@ -132,9 +136,9 @@
           <div class="footer-social">
             <b>Давайте дружить!</b>
             <ul>
-              <li><a href="#" class="button social-button vk-link" aria-label="Вконтакте">Вконтакте</a></li>
-              <li><a href="#" class="button social-button fb-link" aria-label="Фейсбук">Фейсбук</a></li>
-              <li><a href="#" class="button social-button inst-link" aria-label="Инстаграм">Инстаграм</a></li>
+              <li><a href="#" class="button social-button vk-link" aria-label="Вконтакте"></a></li>
+              <li><a href="#" class="button social-button fb-link" aria-label="Фейсбук"></a></li>
+              <li><a href="#" class="button social-button inst-link" aria-label="Инстаграм"></a></li>
             </ul>
           </div>
           <p class="footer-copyright">
@@ -143,37 +147,39 @@
           </p>
         </div>
       </footer>
-      <section class="modal modal-login">
-        <h2>Личный кабинет</h2>
-        <p>Введите свой логин и пароль.</p>
-        <form class="modal-login-form" action="index.html" method="post">
-          <p>
-            <input type="text" name="login" id="modal-login-login" placeholder="Логин">
-            <label for="modal-login-login" class="visually-hidden">Логин</label>
-          </p>
-          <p>
-            <input type="password" name="password" id="modal-login-password" placeholder="Пароль">
-            <label for="modal-login-password" class="visually-hidden">Пароль</label>
-          </p>
-          <p class="modal-login-info">
-            <input type="checkbox" id="modal-login-remember" name="remember">
-            <label for="modal-login-remember">Запомните меня</label>
-            <a href="#" class="password-restore-link">Я забыл пароль</a>
-          </p>
-          <button type="submit" name="modal-login-button" class="button">Войти</button>
-        </form>
-        <button type="button" class="modal-login-close" name="mobutton">Закрыть</button>
+      <section class="modal modal-login visually-hidden">
+        <div class="noisy-background">
+          <h2>Личный кабинет</h2>
+          <p>Введите пожалуйста свой логин и пароль.</p>
+          <form class="modal-login-form" action="index.html" method="post">
+            <p>
+              <input type="text" name="login" id="modal-login-login" placeholder="Логин">
+              <label for="modal-login-login" class="visually-hidden">Логин</label>
+            </p>
+            <p>
+              <input type="password" name="password" id="modal-login-password" placeholder="Пароль">
+              <label for="modal-login-password" class="visually-hidden">Пароль</label>
+            </p>
+            <p class="modal-login-info">
+              <input type="checkbox" id="modal-login-remember" name="remember" class="visually-hidden">
+              <label for="modal-login-remember">Запомните меня</label>
+              <a href="#" class="password-restore-link">Я забыл пароль!</a>
+            </p>
+            <button type="submit" name="modal-login-button" class="button">Войти</button>
+          </form>
+          <button type="button" class="modal-close" name="mobutton" onclick="closeLogin(event)" aria-label="Закрыть форму входа"></button>
+        </div>
       </section>
-      <section class="modal modal-map">
+      <section class="modal modal-map visually-hidden">
         <h2 class="visually-hidden">Месторасположение</h2>
         <p>
           <img src="img/map-full.jpg" width="766" height="560" alt="Офис компании по адресу: Г. САНКТ-ПЕТЕРБУРГ, УЛ. Б. КОНЮШЕННАЯ, Д. 19/8">
+          <button type="button" class="modal-close" name="momapbutton" onclick="closeMap(event)" aria-label="Закрыть карту"></button>
         </p>
-        <button type="button" class="modal-map-close" name="momapbutton">Закрыть</button>
 
       </section>
 
 
-
+      <script type="text/javascript" src="js/modals.js"></script>
     </body>
   </html>
