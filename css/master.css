@@ -82,6 +82,7 @@ header.page-header {
 }
 .page-navi li {
   display: inline-block;
+  margin-right: -3px;
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
@@ -92,7 +93,6 @@ header.page-header {
   height: 72px;
   box-sizing: border-box;
   padding: 25px 20px;
-
   text-decoration: none;
   color: #ffffff;
 }
@@ -105,9 +105,10 @@ header.page-header {
 .page-navi a:focus:not(:hover) {
   box-shadow: inset 0 0 0 4px #ffffff;
 }
-.site-navi-current {
+li.site-navi-current {
   box-shadow: inset 0 -4px 0 #ffffff;
-  margin: 0 20px;
+  margin-left: 20px;
+  margin-right: 17px;
 }
 .site-navi-current a {
   margin: 0 -20px;
@@ -138,10 +139,10 @@ header.page-header {
   padding-right: 22px;
 
 }
-.login-link {
+.user-navi a.login-link {
   position: relative;
+  margin-right: 5px;
   width: 107px;
-
   text-align: right;
 }
 .login-link::before {
@@ -169,62 +170,51 @@ header.page-header {
 }
 
 .features {
-  margin-top: 290px;
-
+  margin-top: 285px;
   text-align: center;
   color: #f7f4f1;
 }
 .features-list {
   display: flex;
-  justify-content: space-around;
-
+  justify-content: space-between;
   margin: 0;
   padding: 0;
-
   list-style: none;
 }
 .feature-item {
   flex-basis: 300px;
   max-width: 300px;
-
-  padding: 0 15px;
 }
 .feature-item h3 {
   position: relative;
-
   margin: 0;
   padding: 0;
-  margin-bottom: 67px;
-
+  margin-bottom: 59px;
   font-size: 30px;
   line-height: 42px;
 }
 
 .feature-item h3::after {
   content: "";
-
   position: absolute;
-  top: 52px;
+  top: 49px;
   left: 50%;
-
   width: 20px;
   height: 20px;
-
   background-color: #f7f4f1;
-
   transform: rotate(45deg);
   transform-origin: left top;
 }
 
 .feature-item p {
   margin-bottom: 80px;
+  padding: 0 10px;
 }
 
 .section-wraper {
   box-sizing: border-box;
-
   margin-bottom: 36px;
-  padding-top: 50px;
+  padding-top: 45px;
 }
 
 .section-wraper h2 {
@@ -278,7 +268,7 @@ section.news ul {
 .contacts p,
 .appointment b {
   padding-right: 10px;
-  margin-top: 21.5px;
+  margin-top: 20px;
   margin-bottom: 0;
 }
 
@@ -306,8 +296,7 @@ section.news ul {
 .appointment-form label,
 .modal-login-form label {
   display: block;
-
-  padding: 9px 17px;
+  padding: 8.5px 17px;
 }
 .appointment-form input,
 .modal-login-form input {
@@ -336,7 +325,7 @@ section.gallery .button {
   width: 140px;
 }
 section.contacts .button {
-  margin-top: 25px;
+  margin-top: 22px;
 }
 section.gallery .button {
   margin-top: 38px;
@@ -352,17 +341,15 @@ section.gallery .button {
 .appointment .button,
 .modal-login-form .button {
   width: 300px;
-
-  margin: 20px 0 50px
+  margin: 19.5px 0 50px;
 }
 
 section.gallery figure {
   width: 300px;
   height: 178px;
   margin: 0;
-  margin-top: 25px;
+  margin-top: 21px;
   box-sizing: border-box;
-
   border: 7px solid #ffffff;
 }
 
@@ -380,10 +367,10 @@ section.contacts::before {
   background-image: url("../img/split.png")
 }
 .inner-page h1 {
+  letter-spacing: 0.05px;
   padding-top: 50px;
   margin: 0;
-  margin-bottom: 20px;
-
+  margin-bottom: 15px;
   font-size: 30px;
   line-height: 42px;
 }
@@ -394,28 +381,24 @@ section.contacts::before {
 }
 
 .breadcrumbs {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-
   margin: 0;
   padding: 0;
-
   list-style: none;
 }
 
 .breadcrumbs li {
+  display: inline-block;
   position: relative;
-  margin-right: 45px;
+  margin-right: 40px;
 }
 
 .breadcrumbs li:not(.breadcrumbs-current)::after {
   content: "";
   position: absolute;
   top: 8px;
-  right: -28px;
-  width: 7px;
-  height: 7px;
+  right: -24px;
+  width: 8px;
+  height: 8px;
   background-color: #000000;
   transform: rotate(45deg);
 }
@@ -427,16 +410,13 @@ section.contacts::before {
 .button {
   font: inherit;
   display: block;
-
   padding: 9.5px 0;
-
   text-align: center;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   color: #ffffff;
   text-transform: uppercase;
   font-size: 14px;
   line-height: 24px;
-
   background-color: #000000;
   border:none;
   cursor: pointer;
@@ -475,9 +455,8 @@ section.contacts::before {
 }
 .filter-option {
   position: relative;
-
   padding-left: 43px;
-  margin-bottom: 17px;
+  margin-bottom: 18px;
 }
 
 .filter-option:last-of-type {
@@ -577,10 +556,9 @@ section.contacts::before {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
   padding: 0;
   margin: 0;
-
+  margin-top: 7px;
   list-style: none;
 }
 
@@ -632,8 +610,7 @@ section.contacts::before {
 
 p.catalog-item-price {
   display: flex;
-
-  margin: 0 16.5px;
+  margin: -1px 16px 1px;
 }
 .catalog-item-price .button {
   width: 78px;
@@ -669,13 +646,12 @@ p.catalog-item-price {
 
 .price-page .wraper-main > h2 {
   position: relative;
-
-  margin: 50px 0 60px;
+  margin: 48px 0 60px;
   padding: 0;
-
   text-align:center;
   font-size: 48px;
   line-height: 48px;
+  letter-spacing: 0.2px;
 }
 
 .price-page .wraper-main > h2::before,
@@ -715,54 +691,46 @@ section.aid-info ul,
 section.product-info ul {
   margin: 0;
   padding: 0;
-  margin-bottom: 64px;
-
+  margin-bottom: 58px;
   list-style: none;
 }
 
 section.aid-info li,
 section.product-info li {
   position: relative;
-
   padding-left: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 13.5px;
 }
 
 section.aid-info li::before,
 section.product-info li::before {
   content: "";
   position: absolute;
-
-  left: 2px;
-  top: 8px;
-
+  left: 1.5px;
+  top: 7.5px;
   width: 7px;
   height: 7px;
-
   background-color: #000000;
-
   transform: rotate(45deg);
 }
 .price-page .wraper-main h3 {
   margin: 0;
-  margin-bottom: 33px;
-
+  margin-bottom: 28px;
   font-size: 24px;
   line-height: 30px;
 }
 
 .price-list-table {
   border-collapse: collapse;
+  margin-top: 35px;
 }
 
 .price-list-table td {
   width: 231px;
-  height: 43px;
+  height: 41.5px;
   box-sizing: border-box;
   padding-left: 17px;
-
   text-align: left;
-
   background-color: #f9f6f3;
   border: 2px solid #000000;
 }
@@ -785,12 +753,12 @@ section.info p:last-of-type {
 
 section.info p:last-of-type {
   float: right;
-
   padding-left: 10px;
+  letter-spacing: 0.1px;
 }
 
 .price-page main.noisy-background {
-  padding-bottom: 80px;
+  padding-bottom: 76px;
 }
 
 section.product-photos {
@@ -801,9 +769,9 @@ section.product-photos {
 
 .product-photo-full {
   margin: 0;
+  margin-top: 9px;
   padding: 0;
   width: 460px;
-
 }
 .product-photos img {
   display: block;
@@ -842,10 +810,11 @@ section.product-info {
 p.product-availability,
 p.product-article {
   float: left;
-
   width: 50%;
-  margin-top: 24px;
-  margin-bottom: 35px;
+  box-sizing: border-box;
+  padding-right: 12px;
+  margin-top: 27px;
+  margin-bottom: 29px;
 }
 
 p.product-article {
@@ -856,21 +825,24 @@ p.product-article {
 }
 
 .product-info .catalog-item-price {
-  margin-top: 40px;
+  margin-top: 36.5px;
 }
 
 .product-info h3 {
   margin: 0;
-  margin-top: 65px;
-  margin-bottom: 33px;
+  padding: 0;
+  margin-top: 61px;
+  margin-bottom: 28px;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 section.product-info li {
-  margin-bottom: 8px;
+  margin-bottom: 0px;
 }
 .page-footer {
   margin-top: 65px;
-  padding-top: 60px;
+  padding-top: 57px;
   padding-bottom: 37px;
   color: #ffffff;
   background: #232323 url("../img/dark-noise-bg.jpg") 0 0;
@@ -904,11 +876,10 @@ section.product-info li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
   margin: 0;
   margin-top: 15px;
   padding: 0;
-
+  padding-left: 8px;
   list-style: none;
 }
 
@@ -976,6 +947,8 @@ section.product-info li {
 
 .footer-copyright a {
   margin-top: 15px;
+  margin-right: -3px;
+  margin-left: 3px;
 }
 
 .page-footer .button:hover,
@@ -1030,9 +1003,6 @@ section.product-info li {
   margin-bottom: 9px;
 }
 
-.modal-login-form :focus:not(:hover) {
-  outline-color: #000000;
-}
 
 .modal-login input {
   width: 100%;
