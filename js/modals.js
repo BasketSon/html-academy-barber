@@ -1,5 +1,5 @@
-var modalMap = document.querySelector('section.modal-map');
-var modalLogin = document.querySelector('section.modal-login')
+var modalMap = document.querySelector('.modal-map-overlay');
+var modalLogin = document.querySelector('.modal-login-overlay')
 var showMapButton = document.querySelector('#map-button');
 
 

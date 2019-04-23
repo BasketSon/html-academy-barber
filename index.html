@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <title>Barbershop borodinski</title>
       <link rel="stylesheet" href="css/normalize.css">
-      <link rel="stylesheet" href="css/master.css">
+      <link rel="stylesheet" href="css/master.min.css">
       <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
     </head>
     <body>
@@ -147,37 +147,44 @@
           </p>
         </div>
       </footer>
-      <section class="modal modal-login visually-hidden">
-        <div class="noisy-background">
-          <h2>Личный кабинет</h2>
-          <p>Введите пожалуйста свой логин и пароль.</p>
-          <form class="modal-login-form" action="index.html" method="post">
-            <p>
-              <input type="text" name="login" id="modal-login-login" placeholder="Логин">
-              <label for="modal-login-login" class="visually-hidden">Логин</label>
-            </p>
-            <p>
-              <input type="password" name="password" id="modal-login-password" placeholder="Пароль">
-              <label for="modal-login-password" class="visually-hidden">Пароль</label>
-            </p>
-            <p class="modal-login-info">
-              <input type="checkbox" id="modal-login-remember" name="remember" class="visually-hidden">
-              <label for="modal-login-remember">Запомните меня</label>
-              <a href="#" class="password-restore-link">Я забыл пароль!</a>
-            </p>
-            <button type="submit" name="modal-login-button" class="button">Войти</button>
-          </form>
-          <button type="button" class="modal-close" name="mobutton" onclick="closeLogin(event)" aria-label="Закрыть форму входа"></button>
-        </div>
-      </section>
-      <section class="modal modal-map visually-hidden">
-        <h2 class="visually-hidden">Месторасположение</h2>
-        <p>
-          <img src="img/map-full.jpg" width="766" height="560" alt="Офис компании по адресу: Г. САНКТ-ПЕТЕРБУРГ, УЛ. Б. КОНЮШЕННАЯ, Д. 19/8">
-          <button type="button" class="modal-close" name="momapbutton" onclick="closeMap(event)" aria-label="Закрыть карту"></button>
-        </p>
+      <div class="modal-overlay modal-login-overlay visually-hidden">
+        <section class="modal modal-login">
+          <div class="noisy-background">
+            <h2>Личный кабинет</h2>
+            <p>Введите пожалуйста свой логин и пароль.</p>
+            <form class="modal-login-form" action="index.html" method="post">
+              <p class="login-input-wraper">
+                <input type="text" name="login" id="modal-login-login" placeholder="Логин">
+                <label for="modal-login-login" class="visually-hidden">Логин</label>
+              </p>
+              <p class="login-input-wraper">
+                <input type="password" name="password" id="modal-login-password" placeholder="Пароль">
+                <label for="modal-login-password" class="visually-hidden">Пароль</label>
+              </p>
+              <p class="modal-login-info">
+                <input type="checkbox" id="modal-login-remember" name="remember" class="visually-hidden">
+                <label for="modal-login-remember">Запомните меня</label>
+                <a href="#" class="password-restore-link">Я забыл пароль!</a>
+              </p>
+              <button type="submit" name="modal-login-button" class="button">Войти</button>
+            </form>
+            <button type="button" class="modal-close" name="mobutton" onclick="closeLogin(event)" aria-label="Закрыть форму входа"></button>
+          </div>
+        </section>
+      </div>
 
-      </section>
+      <div class="modal-overlay modal-map-overlay visually-hidden">
+        <section class="modal modal-map">
+          <h2 class="visually-hidden">Месторасположение</h2>
+          <p>
+            <a href="https://yandex.ru/maps/2/saint-petersburg/?ll=30.323055%2C59.938631&mode=search&sll=30.315635%2C59.938951&sspn=1.073914%2C0.306639&text=%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BD%D1%8E%D1%88%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F%2019&z=17">
+              <img src="img/map-full.jpg" width="766" height="560" alt="Офис компании по адресу: Г. САНКТ-ПЕТЕРБУРГ, УЛ. Б. КОНЮШЕННАЯ, Д. 19/8">
+            </a>
+            <button type="button" class="modal-close" name="momapbutton" onclick="closeMap(event)" aria-label="Закрыть карту"></button>
+          </p>
+
+        </section>
+      </div>
 
 
       <script type="text/javascript" src="js/modals.js"></script>
