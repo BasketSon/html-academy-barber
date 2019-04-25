@@ -1062,6 +1062,41 @@ section.product-info li {
   height: 385px;
 }
 
+.show-login {
+  animation: bounce 0.7s backwards 0.1s
+}
+
+.input-shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes bounce {
+  from {
+    transform: translate(-50%, calc(-50% - 2000px));
+  }
+  70% {
+    transform: translate(-50%, calc(-50% + 100px));
+  }
+  90% {
+    transform: translate(-50%, calc(-50% - 50px));
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
 .modal-login .noisy-background {
   position: relative;
 
@@ -1094,22 +1129,25 @@ section.product-info li {
 .modal-login input {
   width: 100%;
 
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .modal-login input::-webkit-input-placeholder {
   color: #000000;
   opacity: 1;
+  text-transform: uppercase;
 }
 
 .modal-login input:-ms-input-placeholder {
   color: #000000;
   opacity: 1;
+  text-transform: uppercase;
 }
 
 .modal-login input::-ms-input-placeholder {
   color: #000000;
   opacity: 1;
+  text-transform: uppercase;
 }
 
 .modal-login input::placeholder {
@@ -1178,9 +1216,29 @@ p.modal-login-info {
   border: 7px solid #ffffff;
 }
 
+.map-rotate {
+  animation: rotate 0.5s backwards 0.1s;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(calc(-50% - 2000px), -50%) rotate(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(1440deg);
+  }
+}
+
 .modal-map p {
   position: relative;
   margin: 0;
+}
+
+.modal-map iframe {
+  position: absolute;
+  z-index: 2;
+  border: none;
 }
 
 
